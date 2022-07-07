@@ -1,18 +1,27 @@
-import { NgModule } from '@angular/core';
+import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {FormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { AppComponent }   from './app.component';
+
+import {TableModule} from 'primeng/table';
+import { TableComponent } from './table/table.component';
+import {CalendarModule} from "primeng/calendar";
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    TableModule,
+    HttpClientModule,
+    FormsModule,
+    CalendarModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [ AppComponent, TableComponent ],
+  bootstrap:    [ AppComponent ],
+  providers: []
 })
+
 export class AppModule { }
